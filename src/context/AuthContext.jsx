@@ -10,6 +10,7 @@ export function AuthProvider({ children }) {
 
   // Fetch the profile row for a given user id
   async function fetchProfile(userId) {
+    if (!supabase) return
     const { data } = await supabase
       .from('profiles')
       .select('*')
@@ -21,6 +22,11 @@ export function AuthProvider({ children }) {
   // On mount: check if user is already logged in
   // Also listen for auth state changes (login, logout, token refresh)
   useEffect(() => {
+    if (!supabase) {
+      setLoading(false)
+      return
+    }
+
     // Get current session
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null)
@@ -45,6 +51,7 @@ export function AuthProvider({ children }) {
 
   // Sign up with email, password, and full name
   async function signUp(email, password, fullName) {
+    if (!supabase) return { data: null, error: { message: 'Supabase not configured' } }
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
@@ -57,6 +64,7 @@ export function AuthProvider({ children }) {
 
   // Log in with email and password
   async function signIn(email, password) {
+    if (!supabase) return { data: null, error: { message: 'Supabase not configured' } }
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password,
@@ -66,6 +74,7 @@ export function AuthProvider({ children }) {
 
   // Log out
   async function signOut() {
+    if (!supabase) return { error: { message: 'Supabase not configured' } }
     const { error } = await supabase.auth.signOut()
     if (!error) {
       setUser(null)
