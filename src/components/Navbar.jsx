@@ -42,7 +42,7 @@ export default function Navbar() {
           <img 
             src="/logo.png" 
             alt="Lystora" 
-            className="h-10 md:h-12 w-auto object-contain hover:opacity-80 transition-opacity"
+            className="h-14 md:h-20 w-auto object-contain hover:opacity-80 transition-opacity"
           />
         </Link>
 
