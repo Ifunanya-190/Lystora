@@ -7,9 +7,9 @@ import {
   HiOutlineStar,
 } from 'react-icons/hi'
 import SearchBar from '../components/SearchBar'
-import CategoryCard from '../components/CategoryCard'
 import ListingCard from '../components/ListingCard'
-import { categories, featuredListings, cities, testimonials, articles } from '../data/sampleData'
+import CityCarousel from '../components/CityCarousel'
+import { featuredListings, cities, testimonials, articles } from '../data/sampleData'
 
 export default function Home() {
   return (
@@ -69,36 +69,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════
-          CATEGORIES GRID
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-20 bg-white border-y border-ink-100">
-        <div className="container-wide">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-10">
-            <div>
-              <span className="text-xs font-accent font-semibold tracking-widest uppercase text-terra-500 mb-2 block">
-                Browse Categories
-              </span>
-              <h2 className="text-editorial text-3xl md:text-4xl text-ink-900">
-                Everything you need,{' '}
-                <span className="italic text-terra-500">one platform.</span>
-              </h2>
-            </div>
-            <Link
-              to="/categories"
-              className="flex items-center gap-2 text-sm font-accent font-medium text-ink-600 hover:text-terra-500 transition-colors"
-            >
-              View all categories <HiOutlineArrowRight />
-            </Link>
-          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {categories.slice(0, 9).map((cat) => (
-              <CategoryCard key={cat.slug} {...cat} />
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ═══════════════════════════════════════════════════
           FEATURED LISTINGS
@@ -185,9 +156,9 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          CITIES / GLOBAL REACH
+          CITIES / GLOBAL REACH - CAROUSEL
       ═══════════════════════════════════════════════════ */}
-      <section className="py-20">
+      <section className="py-20 bg-white border-y border-ink-100">
         <div className="container-wide">
           <div className="text-center mb-12">
             <span className="text-xs font-accent font-semibold tracking-widest uppercase text-terra-500 mb-2 block">
@@ -202,24 +173,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {cities.map((city) => (
-              <Link
-                key={city.name}
-                to={`/city?loc=${city.name}`}
-                className="group card-elevated p-5 text-center hover:-translate-y-1 transition-all duration-300"
-              >
-                <div className="w-10 h-10 rounded-xl bg-terra-50 flex items-center justify-center text-terra-500 text-xl mx-auto mb-2">{city.flag}</div>
-                <h3 className="font-accent font-semibold text-ink-800 group-hover:text-terra-600 transition-colors">
-                  {city.name}
-                </h3>
-                <p className="text-xs text-ink-400">{city.country}</p>
-                <p className="text-xs text-terra-500 font-medium mt-1.5">
-                  {city.listingCount} listings
-                </p>
-              </Link>
-            ))}
-          </div>
+          <CityCarousel cities={cities} />
         </div>
       </section>
 
