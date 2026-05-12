@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { HiOutlineMenuAlt3, HiX, HiOutlineGlobe, HiOutlineUserCircle, HiOutlineLogout } from 'react-icons/hi'
+import { HiOutlineMenuAlt3, HiX, HiOutlineUserCircle, HiOutlineLogout } from 'react-icons/hi'
 import { useAuth } from '../context/AuthContext'
 
 const navLinks = [
@@ -39,12 +39,11 @@ export default function Navbar() {
       <nav className="container-wide flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
-          <span className="w-9 h-9 rounded-lg bg-terra-500 flex items-center justify-center">
-            <HiOutlineGlobe className="text-white text-xl" />
-          </span>
-          <span className="font-heading text-2xl text-ink-900 tracking-tight">
-            Lystora
-          </span>
+          <img 
+            src="/logo.png" 
+            alt="Lystora" 
+            className="h-10 md:h-12 w-auto object-contain hover:opacity-80 transition-opacity"
+          />
         </Link>
 
         {/* Desktop links */}
