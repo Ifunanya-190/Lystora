@@ -309,14 +309,7 @@ export default function Terms() {
 
       {/* Bottom wave + CTA */}
       <section className="relative">
-        <div className="bg-sand-50">
-          <svg viewBox="0 0 1200 80" preserveAspectRatio="none" className="w-full h-10 md:h-16">
-            <path
-              d="M0,40 C200,0 400,80 600,40 C800,0 1000,80 1200,40 L1200,80 L0,80 Z"
-              fill="#2A2520"
-            />
-          </svg>
-        </div>
+
       </section>
     </>
   )

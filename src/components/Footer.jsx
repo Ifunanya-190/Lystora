@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { HiOutlineGlobe, HiOutlineCheckCircle } from 'react-icons/hi'
+import { HiOutlineCheckCircle } from 'react-icons/hi'
 
 const footerSections = [
   {
@@ -70,12 +70,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <span className="w-9 h-9 rounded-lg bg-terra-500 flex items-center justify-center">
-                <HiOutlineGlobe className="text-white text-xl" />
-              </span>
-              <span className="font-heading text-2xl text-cream tracking-tight">
-                Lystora
-              </span>
+              <img 
+                src="/logo.png" 
+                alt="Lystora" 
+                className="h-10 w-auto object-contain"
+              />
             </Link>
             <p className="text-ink-400 text-sm leading-relaxed max-w-sm mb-6">
               The global directory connecting you with verified businesses, professionals,
