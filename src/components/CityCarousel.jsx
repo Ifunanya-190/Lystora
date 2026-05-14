@@ -47,13 +47,13 @@ export default function CityCarousel({ cities }) {
       <div className="relative overflow-hidden w-full">
         <div className="flex items-center justify-center gap-4 md:gap-6 px-4">
           {/* Previous City (Left) - Peek View */}
-          <div className="hidden md:flex flex-shrink-0 w-1/4 opacity-50 transform scale-90 transition-all duration-500">
-            <div className="w-full bg-gradient-to-br from-ink-50 to-ink-100 rounded-xl p-4 text-center">
-              <div className="text-3xl mb-2">{prevCity.flag}</div>
-              <h4 className="font-accent font-semibold text-sm text-ink-700 truncate">
+          <div className="hidden md:flex flex-shrink-0 w-1/4 opacity-50 transform scale-90 transition-all duration-500 hover:opacity-70 hover:scale-95">
+            <div className="w-full bg-gradient-to-br from-ink-50 to-ink-100 rounded-2xl p-5 text-center border border-ink-200 shadow-md hover:shadow-lg transition-all">
+              <div className="text-4xl mb-3 filter drop-shadow">{prevCity.flag}</div>
+              <h4 className="font-accent font-semibold text-sm text-ink-800 truncate">
                 {prevCity.name}
               </h4>
-              <p className="text-xs text-ink-500">{prevCity.country}</p>
+              <p className="text-xs text-ink-600">{prevCity.country}</p>
             </div>
           </div>
 
@@ -88,13 +88,13 @@ export default function CityCarousel({ cities }) {
           </Link>
 
           {/* Next City (Right) - Peek View */}
-          <div className="hidden md:flex flex-shrink-0 w-1/4 opacity-50 transform scale-90 transition-all duration-500">
-            <div className="w-full bg-gradient-to-br from-forest-50 to-forest-100 rounded-xl p-4 text-center">
-              <div className="text-3xl mb-2">{nextCity.flag}</div>
-              <h4 className="font-accent font-semibold text-sm text-forest-700 truncate">
+          <div className="hidden md:flex flex-shrink-0 w-1/4 opacity-50 transform scale-90 transition-all duration-500 hover:opacity-70 hover:scale-95">
+            <div className="w-full bg-gradient-to-br from-forest-50 to-forest-100 rounded-2xl p-5 text-center border border-forest-200 shadow-md hover:shadow-lg transition-all">
+              <div className="text-4xl mb-3 filter drop-shadow">{nextCity.flag}</div>
+              <h4 className="font-accent font-semibold text-sm text-forest-800 truncate">
                 {nextCity.name}
               </h4>
-              <p className="text-xs text-forest-600">{nextCity.country}</p>
+              <p className="text-xs text-forest-700">{nextCity.country}</p>
             </div>
           </div>
         </div>

@@ -17,14 +17,14 @@ export default function ListingCard({ listing }) {
   return (
     <Link
       to={`/listing/${id}`}
-      className="group card-elevated overflow-hidden flex flex-col"
+      className="group card-elevated overflow-hidden flex flex-col transition-all duration-500 hover:shadow-xl hover:-translate-y-2 animate-fade-in"
     >
       {/* Image */}
       <div className="relative h-48 bg-ink-100 overflow-hidden">
         <img
           src={image}
           alt={name}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           loading="lazy"
         />
         {featured && (
