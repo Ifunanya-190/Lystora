@@ -51,7 +51,7 @@ export function AuthProvider({ children }) {
 
   // Sign up with email, password, and full name
   async function signUp(email, password, fullName) {
-    if (!supabase) return { data: null, error: { message: 'Supabase not configured' } }
+    if (!supabase) return { data: null, error: { message: 'Authentication is not yet configured. Please set environment variables on your deployment platform (Vercel).' } }
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
@@ -64,7 +64,7 @@ export function AuthProvider({ children }) {
 
   // Log in with email and password
   async function signIn(email, password) {
-    if (!supabase) return { data: null, error: { message: 'Supabase not configured' } }
+    if (!supabase) return { data: null, error: { message: 'Authentication is not yet configured. Please set environment variables on your deployment platform (Vercel).' } }
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password,
@@ -74,7 +74,7 @@ export function AuthProvider({ children }) {
 
   // Log out
   async function signOut() {
-    if (!supabase) return { error: { message: 'Supabase not configured' } }
+    if (!supabase) return { error: { message: 'Authentication is not yet configured. Please set environment variables on your deployment platform (Vercel).' } }
     const { error } = await supabase.auth.signOut()
     if (!error) {
       setUser(null)

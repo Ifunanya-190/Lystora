@@ -73,7 +73,7 @@ export default function Footer() {
               <img 
                 src="/logo.png" 
                 alt="Lystora" 
-                className="h-10 w-auto object-contain"
+                className="h-14 md:h-16 w-auto object-contain"
               />
             </Link>
             <p className="text-ink-400 text-sm leading-relaxed max-w-sm mb-6">

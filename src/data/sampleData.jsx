@@ -99,6 +99,17 @@ export const featuredListings = [
     verified: true,
     featured: true,
   },
+  {
+    id: 'lumina',
+    name: 'Lumina Design Studio',
+    category: 'Technology',
+    location: 'Lagos, Nigeria',
+    rating: 4.7,
+    reviewCount: 92,
+    image: PLACEHOLDER_5,
+    verified: true,
+    featured: false,
+  },
 ]
 
 export const cities = [

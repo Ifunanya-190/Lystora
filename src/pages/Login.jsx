@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { HiOutlineGlobe, HiOutlineMail, HiOutlineLockClosed, HiOutlineExclamationCircle } from 'react-icons/hi'
+import { HiOutlineMail, HiOutlineLockClosed, HiOutlineExclamationCircle } from 'react-icons/hi'
 import { useAuth } from '../context/AuthContext'
 
 export default function Login() {
@@ -31,13 +31,12 @@ export default function Login() {
     <div className="min-h-screen bg-gradient-to-br from-cream via-white to-sand-50 flex items-center justify-center px-4 py-24">
       <div className="w-full max-w-md">
         {/* Logo */}
-        <Link to="/" className="flex items-center justify-center gap-2 mb-8 group">
-          <span className="w-10 h-10 rounded-xl bg-terra-500 flex items-center justify-center shadow-md">
-            <HiOutlineGlobe className="text-white text-2xl" />
-          </span>
-          <span className="font-heading text-3xl text-ink-900 tracking-tight">
-            Lystora
-          </span>
+        <Link to="/" className="flex items-center justify-center mb-8 group">
+          <img 
+            src="/logo.png" 
+            alt="Lystora" 
+            className="h-16 w-auto object-contain hover:opacity-80 transition-opacity"
+          />
         </Link>
 
         {/* Card */}

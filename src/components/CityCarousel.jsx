@@ -62,7 +62,7 @@ export default function CityCarousel({ cities }) {
             to={`/city?loc=${currentCity.name}`}
             className="flex-1 md:flex-shrink-0 md:w-2/5 group transition-transform duration-500"
           >
-            <div className="bg-gradient-to-br from-terra-50 via-white to-forest-50 rounded-2xl p-8 sm:p-12 text-center min-h-80 flex flex-col items-center justify-center relative overflow-hidden shadow-lg group-hover:shadow-2xl transition-shadow duration-300 transform group-hover:scale-105"
+            <div className="bg-gradient-to-br from-terra-50 via-white to-forest-50 rounded-2xl p-6 sm:p-10 md:p-12 text-center min-h-72 sm:min-h-80 flex flex-col items-center justify-center relative overflow-hidden shadow-lg group-hover:shadow-2xl transition-shadow duration-300 transform group-hover:scale-105"
             >
               {/* Decorative circles */}
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-terra-100 rounded-full opacity-30" />
